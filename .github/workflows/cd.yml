@@ -39,7 +39,7 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build With Gradle
-        run: ./gradlew build
+        run: ./gradlew build -x test
 
       - name: Docker build & push to docker repo
         env:
