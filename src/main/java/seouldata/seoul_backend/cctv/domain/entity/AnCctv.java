@@ -14,9 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class AnCctv {
 
-    @Id
     private Long number;
     private String autonomousRegion;
+    @Id
     private String address;
     private Double lon;
     private Double lat;
