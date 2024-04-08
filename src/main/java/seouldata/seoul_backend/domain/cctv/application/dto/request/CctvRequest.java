@@ -1,4 +1,4 @@
-package seouldata.seoul_backend.cctv.application.dto.request;
+package seouldata.seoul_backend.domain.cctv.application.dto.request;
 
 import lombok.Builder;
 import lombok.Getter;
