@@ -1,4 +1,4 @@
-package seouldata.seoul_backend.cctv.domain.entity;
+package seouldata.seoul_backend.domain.cctv.domain.entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
