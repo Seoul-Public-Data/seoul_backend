@@ -20,11 +20,11 @@ public class SafetyCenter {
     @Column(name = "center_name")
     private String name;
     private String type;
-    private String lon;
-    private String lat;
+    private double lon;
+    private double lat;
 
     @Builder
-    public SafetyCenter(Long id, String name, String type, String lon, String lat) {
+    public SafetyCenter(Long id, String name, String type, double lon, double lat) {
         this.id = id;
         this.name = name;
         this.type = type;

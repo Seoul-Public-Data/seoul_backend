@@ -30,8 +30,8 @@ public class SafetyCenterGetService {
         List<SafetyCenterResponse.SafetyCenterNearResponse> nearSafetyCenters = new ArrayList<>();
 
         for (SafetyCenter safetyCenter : allSafetyCenter) {
-            Double lat = Double.valueOf(safetyCenter.getLat());
-            Double lon = Double.valueOf(safetyCenter.getLon());
+            double lat = safetyCenter.getLat();
+            double lon = safetyCenter.getLon();
 
             double distance = DistanceUtils.calculateDistance(userLon, userLat, lon, lat);
 
@@ -40,8 +40,8 @@ public class SafetyCenterGetService {
                         .id(safetyCenter.getId())
                         .name(safetyCenter.getName())
                         .type(safetyCenter.getType())
-                        .lon(lon)
-                        .lat(lat)
+                        .lon(safetyCenter.getLon())
+                        .lat(safetyCenter.getLat())
                         .build();
                 nearSafetyCenters.add(nearSafetyCenter);
             }
