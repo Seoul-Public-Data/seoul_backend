@@ -18,15 +18,18 @@ public class EmergencyBell {
     @Id @Column(name = "installation_location")
     private String location;
     private String address;
+    @Column(name = "functions")
+    private String function;
     @Column(name = "lon")
     private Double longitude;
     @Column(name = "lat")
     private Double latitude;
 
     @Builder
-    public EmergencyBell(String location, String address, Double longitude, Double latitude) {
+    public EmergencyBell(String location, String address, String function, Double longitude, Double latitude) {
         this.location = location;
         this.address = address;
+        this.function = function;
         this.longitude = longitude;
         this.latitude = latitude;
     }
