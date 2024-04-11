@@ -25,6 +25,7 @@ public class HeatShelterGetService {
         double userLatitude = heatShelterNearRequest.getUserLatitude();
         double userLongitude = heatShelterNearRequest.getUserLongitude();
         System.out.println("userLatitude: " + userLatitude);
+        String type = "heatshelter";
 
         List<HeatShelterResponse.HeatShelterNearResponse> heatShelterNearList = new ArrayList<>();
         for (HeatShelter heatShelter : heatShelters) {
@@ -37,6 +38,7 @@ public class HeatShelterGetService {
                         .address(heatShelter.getAddress())
                         .longitude(heatShelter.getLongitude())
                         .latitude(heatShelter.getLatitude())
+                        .type(type)
                         .build();
                 heatShelterNearList.add(heatShelterNearResponse);
             }
