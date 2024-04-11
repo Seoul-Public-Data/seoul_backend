@@ -20,6 +20,8 @@ public class FireStationGetService {
     private final FireStationQueryService fireStationQueryService;
 
     public List<FireStationResponse.FireStationNearResponse> getFireStationNear(FireStationRequest.FireStationNearRequest fireStationNearRequest) {
+        String type = "firestation";
+
         // 사용자의 위치
         double userLon = fireStationNearRequest.getUserLon();
         double userLat = fireStationNearRequest.getUserLat();
@@ -39,6 +41,7 @@ public class FireStationGetService {
                         .name(fireStation.getName())
                         .lon(fireStation.getLon())
                         .lat(fireStation.getLat())
+                        .type(type)
                         .build();
 
                 nearFireStations.add(nearFireStation);
