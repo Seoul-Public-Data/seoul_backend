@@ -13,13 +13,15 @@ public class FireStationResponse {
         private String name;
         private double lon;
         private double lat;
+        private String type;
 
         @Builder
-        public FireStationNearResponse(Long id, String name, double lon, double lat) {
+        public FireStationNearResponse(Long id, String name, double lon, double lat, String type) {
             this.id = id;
             this.name = name;
             this.lon = lon;
             this.lat = lat;
+            this.type = type;
         }
 
     }

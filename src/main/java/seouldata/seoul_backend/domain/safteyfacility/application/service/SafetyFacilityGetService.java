@@ -21,6 +21,8 @@ public class SafetyFacilityGetService {
     private final SafetyFacilityQueryService safetyFacilityQueryService;
 
     public List<SafetyFacilityResponse.SafetyFacilityNearResponse> getSafetyFacilityNear(SafetyFacilityRequest.SafetyFacilityNearRequest safetyFacilityNearRequest) {
+        String type = "safetyfacility";
+
         // 사용자 현재 위치
         double userLon = safetyFacilityNearRequest.getUserLon();
         double userLat = safetyFacilityNearRequest.getUserLat();
@@ -44,6 +46,7 @@ public class SafetyFacilityGetService {
                         .name(safetyFacility.getId().getName())
                         .lat(safetyFacility.getId().getLat())
                         .lon(safetyFacility.getId().getLon())
+                        .type(type)
                         .build();
 
                 nearSafetyFacilities.add(nearSafetyFacility);

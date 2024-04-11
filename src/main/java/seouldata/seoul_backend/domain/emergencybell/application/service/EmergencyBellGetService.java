@@ -23,6 +23,7 @@ public class EmergencyBellGetService {
         List<EmergencyBell> emergencyBellList = emergencyBellQueryService.findAll();
         double userLatitude = emergencyBellNearRequest.getUserLatitude();
         double userLongitude = emergencyBellNearRequest.getUserLongitude();
+        String type = "emergencybell";
 
         List<EmergencyBellResponse.EmergencyBellNearResponse> emergencyBellNearList = new ArrayList<>();
         for (EmergencyBell emergencyBell : emergencyBellList) {
@@ -36,6 +37,7 @@ public class EmergencyBellGetService {
                         .function(emergencyBell.getFunction())
                         .longitude(emergencyBell.getLongitude())
                         .latitude(emergencyBell.getLatitude())
+                        .type(type)
                         .build();
                 emergencyBellNearList.add(emergencyBellNearResponse);
             }

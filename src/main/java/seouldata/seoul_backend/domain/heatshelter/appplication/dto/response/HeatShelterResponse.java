@@ -15,13 +15,15 @@ public class HeatShelterResponse {
         private String address;
         private double longitude;
         private double latitude;
+        private String type;
 
         @Builder
-        public HeatShelterNearResponse(String name, String address, double longitude, double latitude) {
+        public HeatShelterNearResponse(String name, String address, double longitude, double latitude, String type) {
             this.name = name;
             this.address = address;
             this.longitude = longitude;
             this.latitude = latitude;
+            this.type = type;
         }
     }
 }

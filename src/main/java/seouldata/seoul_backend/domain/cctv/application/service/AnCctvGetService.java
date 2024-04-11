@@ -1,4 +1,4 @@
-package seouldata.seoul_backend.domain.cctv.domain.service;
+package seouldata.seoul_backend.domain.cctv.application.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -8,6 +8,7 @@ import seouldata.seoul_backend.domain.cctv.application.dto.response.CctvResponse
 import seouldata.seoul_backend.domain.cctv.domain.entity.AnCctv;
 import seouldata.seoul_backend.domain.cctv.domain.repository.AnCctvRepository;
 import seouldata.seoul_backend.common.DistanceUtils;
+import seouldata.seoul_backend.domain.cctv.domain.service.AnCctvQueryService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,18 +16,20 @@ import java.util.List;
 @Service
 @RequiredArgsConstructor
 @Transactional
-public class AnCctvService {
+public class AnCctvGetService {
 
-    private final AnCctvRepository anCctvRepository;
+    private final AnCctvQueryService anCctvQueryService;
 
     public List<CctvResponse.CctvNearResponse> getCctvNear(CctvRequest.CctvNearRequest cctvNearRequest) {
+
+        String type = "cctv";
 
         // 사용자의 위치
         double userLon = cctvNearRequest.getUserLon();
         double userLat = cctvNearRequest.getUserLat();
 
         // 모든 cctv 위치 가져오기
-        List<AnCctv> allCctvs = anCctvRepository.findAll();
+        List<AnCctv> allCctvs = anCctvQueryService.findAll();
 //        List<AnCctv> allCctvs = all.stream().distinct()
 //                .collect(Collectors.toList());
 
@@ -47,6 +50,7 @@ public class AnCctvService {
                         .lat(cctv.getLat())
                         .lon(cctv.getLon())
                         .number(cctv.getNumber())
+                        .type(type)
                         .build();
                 nearCctvs.add(nearCctv);
             }
