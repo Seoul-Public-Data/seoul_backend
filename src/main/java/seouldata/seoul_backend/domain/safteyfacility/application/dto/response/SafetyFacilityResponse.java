@@ -16,10 +16,11 @@ public class SafetyFacilityResponse {
         private String lon;
         private double lat;
         private String name;
+        private String type;
 
         @Builder
         public SafetyFacilityNearResponse(String city, String dong, String road, Long number,
-                                          String lon, double lat, String name) {
+                                          String lon, double lat, String name, String type) {
             this.city = city;
             this.dong = dong;
             this.road = road;
@@ -27,6 +28,7 @@ public class SafetyFacilityResponse {
             this.lon = lon;
             this.lat = lat;
             this.name = name;
+            this.type = type;
         }
     }
 }
