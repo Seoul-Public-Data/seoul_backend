@@ -14,14 +14,16 @@ public class EmergencyBellResponse {
         private String function;
         private Double longitude;
         private Double latitude;
+        private String type;
 
         @Builder
-        public EmergencyBellNearResponse(String location, String address, String function, Double longitude, Double latitude) {
+        public EmergencyBellNearResponse(String location, String address, String function, Double longitude, Double latitude, String type) {
             this.location = location;
             this.address = address;
             this.function = function;
             this.longitude = longitude;
             this.latitude = latitude;
+            this.type = type;
         }
     }
 }
