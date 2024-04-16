@@ -19,7 +19,7 @@ public class SafetyCenterGetService {
     private final SafetyCenterQueryService safetyCenterQueryService;
 
     public List<SafetyCenterResponse.SafetyCenterNearResponse> getSafetyCenterNear(double userLon, double userLat) {
-
+        String type = "safetyfacility";
         List<SafetyCenter> allSafetyCenter = safetyCenterQueryService.findAll();
 
         List<SafetyCenterResponse.SafetyCenterNearResponse> nearSafetyCenters = new ArrayList<>();
@@ -34,7 +34,8 @@ public class SafetyCenterGetService {
                 SafetyCenterResponse.SafetyCenterNearResponse nearSafetyCenter = SafetyCenterResponse.SafetyCenterNearResponse.builder()
                         .id(safetyCenter.getId())
                         .name(safetyCenter.getName())
-                        .type(safetyCenter.getType())
+                        .centerType(safetyCenter.getCenterType())
+                        .type(type)
                         .lon(safetyCenter.getLon())
                         .lat(safetyCenter.getLat())
                         .build();
