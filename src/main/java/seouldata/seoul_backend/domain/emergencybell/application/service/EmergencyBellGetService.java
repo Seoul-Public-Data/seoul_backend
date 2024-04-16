@@ -32,8 +32,8 @@ public class EmergencyBellGetService {
                         .location(emergencyBell.getLocation())
                         .address(emergencyBell.getAddress())
                         .function(emergencyBell.getFunction())
-                        .longitude(emergencyBell.getLongitude())
-                        .latitude(emergencyBell.getLatitude())
+                        .lon(emergencyBell.getLongitude())
+                        .lat(emergencyBell.getLatitude())
                         .type(type)
                         .build();
                 emergencyBellNearList.add(emergencyBellNearResponse);

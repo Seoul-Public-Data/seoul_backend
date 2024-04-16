@@ -33,8 +33,8 @@ public class HeatShelterGetService {
                 HeatShelterResponse.HeatShelterNearResponse heatShelterNearResponse = HeatShelterResponse.HeatShelterNearResponse.builder()
                         .name(heatShelter.getName())
                         .address(heatShelter.getAddress())
-                        .longitude(heatShelter.getLongitude())
-                        .latitude(heatShelter.getLatitude())
+                        .lon(heatShelter.getLongitude())
+                        .lat(heatShelter.getLatitude())
                         .type(type)
                         .build();
                 heatShelterNearList.add(heatShelterNearResponse);
