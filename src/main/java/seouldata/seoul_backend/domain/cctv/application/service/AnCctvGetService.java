@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import seouldata.seoul_backend.common.utils.DistanceUtils;
-import seouldata.seoul_backend.domain.cctv.application.dto.request.CctvRequest;
 import seouldata.seoul_backend.domain.cctv.application.dto.response.CctvResponse;
 import seouldata.seoul_backend.domain.cctv.domain.entity.AnCctv;
 import seouldata.seoul_backend.domain.cctv.domain.service.AnCctvQueryService;
@@ -19,18 +18,12 @@ public class AnCctvGetService {
 
     private final AnCctvQueryService anCctvQueryService;
 
-    public List<CctvResponse.CctvNearResponse> getCctvNear(CctvRequest.CctvNearRequest cctvNearRequest) {
+    public List<CctvResponse.CctvNearResponse> getCctvNear(double userLon, double userLat) {
 
         String type = "cctv";
 
-        // 사용자의 위치
-        double userLon = cctvNearRequest.getUserLon();
-        double userLat = cctvNearRequest.getUserLat();
-
         // 모든 cctv 위치 가져오기
         List<AnCctv> allCctvs = anCctvQueryService.findAll();
-//        List<AnCctv> allCctvs = all.stream().distinct()
-//                .collect(Collectors.toList());
 
 
         // 500m이내에 있는 cctv 정보 가져오기
