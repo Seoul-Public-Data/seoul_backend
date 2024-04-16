@@ -16,7 +16,7 @@ public class SafetyFacilityController {
 
     private final SafetyFacilityGetService safetyFacilityGetService;
 
-    @GetMapping("/api/safetyfacilities")
+    @GetMapping("/api/safetyfacility")
     public ResponseEntity getSafetyFacilityNear(@RequestParam double userLon, @RequestParam double userLat) {
         List<SafetyFacilityResponse.SafetyFacilityNearResponse> safetyFacilityNear = safetyFacilityGetService.getSafetyFacilityNear(userLon, userLat);
         return ResponseEntity.ok(safetyFacilityNear);
