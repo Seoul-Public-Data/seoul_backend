@@ -3,11 +3,10 @@ package seouldata.seoul_backend.domain.safteyfacility.application.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import seouldata.seoul_backend.common.DistanceUtils;
+import seouldata.seoul_backend.common.utils.DistanceUtils;
 import seouldata.seoul_backend.domain.safteyfacility.application.dto.request.SafetyFacilityRequest;
 import seouldata.seoul_backend.domain.safteyfacility.application.dto.response.SafetyFacilityResponse;
 import seouldata.seoul_backend.domain.safteyfacility.domain.entity.SafetyFacility;
-import seouldata.seoul_backend.domain.safteyfacility.domain.entity.SafetyFacilityId;
 import seouldata.seoul_backend.domain.safteyfacility.domain.service.SafetyFacilityQueryService;
 
 import java.util.ArrayList;

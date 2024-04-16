@@ -3,7 +3,7 @@ package seouldata.seoul_backend.domain.heatshelter.appplication.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import seouldata.seoul_backend.common.DistanceUtils;
+import seouldata.seoul_backend.common.utils.DistanceUtils;
 import seouldata.seoul_backend.domain.heatshelter.domain.entity.HeatShelter;
 import seouldata.seoul_backend.domain.heatshelter.domain.service.HeatShelterQueryService;
 import seouldata.seoul_backend.domain.heatshelter.appplication.dto.request.HeatShelterRequest;

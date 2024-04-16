@@ -3,7 +3,7 @@ package seouldata.seoul_backend.domain.firestation.application.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import seouldata.seoul_backend.common.DistanceUtils;
+import seouldata.seoul_backend.common.utils.DistanceUtils;
 import seouldata.seoul_backend.domain.firestation.application.dto.request.FireStationRequest;
 import seouldata.seoul_backend.domain.firestation.application.dto.response.FireStationResponse;
 import seouldata.seoul_backend.domain.firestation.domain.entity.FireStation;
