@@ -4,7 +4,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import seouldata.seoul_backend.common.utils.DistanceUtils;
-import seouldata.seoul_backend.domain.firestation.application.dto.request.FireStationRequest;
 import seouldata.seoul_backend.domain.firestation.application.dto.response.FireStationResponse;
 import seouldata.seoul_backend.domain.firestation.domain.entity.FireStation;
 import seouldata.seoul_backend.domain.firestation.domain.service.FireStationQueryService;
@@ -19,12 +18,8 @@ public class FireStationGetService {
 
     private final FireStationQueryService fireStationQueryService;
 
-    public List<FireStationResponse.FireStationNearResponse> getFireStationNear(FireStationRequest.FireStationNearRequest fireStationNearRequest) {
+    public List<FireStationResponse.FireStationNearResponse> getFireStationNear(double userLon, double userLat) {
         String type = "firestation";
-
-        // 사용자의 위치
-        double userLon = fireStationNearRequest.getUserLon();
-        double userLat = fireStationNearRequest.getUserLat();
 
         List<FireStation> allFireStation = fireStationQueryService.findAll();
 

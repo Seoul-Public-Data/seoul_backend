@@ -4,8 +4,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import seouldata.seoul_backend.common.utils.DistanceUtils;
-import seouldata.seoul_backend.domain.safetycenter.application.dto.request.SafetyCenterRequest;
-
 import seouldata.seoul_backend.domain.safetycenter.application.dto.response.SafetyCenterResponse;
 import seouldata.seoul_backend.domain.safetycenter.domain.entity.SafetyCenter;
 import seouldata.seoul_backend.domain.safetycenter.domain.service.SafetyCenterQueryService;
@@ -20,10 +18,7 @@ public class SafetyCenterGetService {
 
     private final SafetyCenterQueryService safetyCenterQueryService;
 
-    public List<SafetyCenterResponse.SafetyCenterNearResponse> getSafetyCenterNear(SafetyCenterRequest.SafetyCenterNearRequest safetyCenterNearRequest) {
-        // 사용자의 위치
-        double userLon = safetyCenterNearRequest.getUserLon();
-        double userLat = safetyCenterNearRequest.getUserLat();
+    public List<SafetyCenterResponse.SafetyCenterNearResponse> getSafetyCenterNear(double userLon, double userLat) {
 
         List<SafetyCenter> allSafetyCenter = safetyCenterQueryService.findAll();
 

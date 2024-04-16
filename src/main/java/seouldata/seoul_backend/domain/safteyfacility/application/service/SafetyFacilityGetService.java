@@ -4,7 +4,6 @@ import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import seouldata.seoul_backend.common.utils.DistanceUtils;
-import seouldata.seoul_backend.domain.safteyfacility.application.dto.request.SafetyFacilityRequest;
 import seouldata.seoul_backend.domain.safteyfacility.application.dto.response.SafetyFacilityResponse;
 import seouldata.seoul_backend.domain.safteyfacility.domain.entity.SafetyFacility;
 import seouldata.seoul_backend.domain.safteyfacility.domain.service.SafetyFacilityQueryService;
@@ -19,12 +18,8 @@ public class SafetyFacilityGetService {
 
     private final SafetyFacilityQueryService safetyFacilityQueryService;
 
-    public List<SafetyFacilityResponse.SafetyFacilityNearResponse> getSafetyFacilityNear(SafetyFacilityRequest.SafetyFacilityNearRequest safetyFacilityNearRequest) {
+    public List<SafetyFacilityResponse.SafetyFacilityNearResponse> getSafetyFacilityNear(double userLon, double userLat) {
         String type = "safetyfacility";
-
-        // 사용자 현재 위치
-        double userLon = safetyFacilityNearRequest.getUserLon();
-        double userLat = safetyFacilityNearRequest.getUserLat();
 
         List<SafetyFacility> allSafetyFacility = safetyFacilityQueryService.findAll();
 
