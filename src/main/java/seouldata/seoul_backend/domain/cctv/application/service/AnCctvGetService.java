@@ -3,11 +3,10 @@ package seouldata.seoul_backend.domain.cctv.application.service;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import seouldata.seoul_backend.common.utils.DistanceUtils;
 import seouldata.seoul_backend.domain.cctv.application.dto.request.CctvRequest;
 import seouldata.seoul_backend.domain.cctv.application.dto.response.CctvResponse;
 import seouldata.seoul_backend.domain.cctv.domain.entity.AnCctv;
-import seouldata.seoul_backend.domain.cctv.domain.repository.AnCctvRepository;
-import seouldata.seoul_backend.common.DistanceUtils;
 import seouldata.seoul_backend.domain.cctv.domain.service.AnCctvQueryService;
 
 import java.util.ArrayList;

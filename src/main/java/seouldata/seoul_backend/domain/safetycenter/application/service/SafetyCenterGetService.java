@@ -3,7 +3,7 @@ package seouldata.seoul_backend.domain.safetycenter.application.service;
 import jakarta.transaction.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import seouldata.seoul_backend.common.DistanceUtils;
+import seouldata.seoul_backend.common.utils.DistanceUtils;
 import seouldata.seoul_backend.domain.safetycenter.application.dto.request.SafetyCenterRequest;
 
 import seouldata.seoul_backend.domain.safetycenter.application.dto.response.SafetyCenterResponse;

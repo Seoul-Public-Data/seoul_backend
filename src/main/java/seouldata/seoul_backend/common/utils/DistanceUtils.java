@@ -1,4 +1,4 @@
-package seouldata.seoul_backend.common;
+package seouldata.seoul_backend.common.utils;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
