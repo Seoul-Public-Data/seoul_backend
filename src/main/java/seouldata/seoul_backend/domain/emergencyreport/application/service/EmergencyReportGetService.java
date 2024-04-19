@@ -9,6 +9,8 @@ import seouldata.seoul_backend.domain.emergencyreport.domain.entity.EmergencyRep
 import seouldata.seoul_backend.domain.emergencyreport.domain.service.EmergencyQueryService;
 
 import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -20,7 +22,7 @@ public class EmergencyReportGetService {
     private final EmergencyQueryService emergencyQueryService;
 
     public List<EmergencyReportResponse.EmergencyReportInHourResponse> getReportInHour() {
-        LocalDateTime now = LocalDateTime.now();
+        LocalDateTime now = ZonedDateTime.now(ZoneId.of("Asia/Seoul")).toLocalDateTime();
         LocalDateTime beforeHour = now.minusHours(1);
         List<EmergencyReport> emergencyReports = emergencyQueryService.findByTimeBetween(beforeHour, now);
         return emergencyReports.stream().map(EmergencyReportMapper::mapToEmergencyReportInHourResponse).collect(Collectors.toList());
