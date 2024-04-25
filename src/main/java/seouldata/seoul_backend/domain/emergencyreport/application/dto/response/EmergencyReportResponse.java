@@ -12,12 +12,14 @@ public class EmergencyReportResponse {
         private String time;
         private double latitude;
         private double longitude;
+        private String contents;
 
         @Builder
-        public EmergencyReportInHourResponse(String time, double latitude, double longitude) {
+        public EmergencyReportInHourResponse(String time, double latitude, double longitude, String contents) {
             this.time = time;
             this.latitude = latitude;
             this.longitude = longitude;
+            this.contents = contents;
         }
     }
 }
