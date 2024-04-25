@@ -23,11 +23,13 @@ public class EmergencyReport {
 
     private double longitude;
     private double latitude;
+    private String contents;
 
     @Builder
-    public EmergencyReport(LocalDateTime time, double longitude, double latitude) {
+    public EmergencyReport(LocalDateTime time, double longitude, double latitude, String contents) {
         this.time = time;
         this.longitude = longitude;
         this.latitude = latitude;
+        this.contents = contents;
     }
 }

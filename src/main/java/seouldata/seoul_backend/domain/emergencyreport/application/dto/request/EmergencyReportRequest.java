@@ -13,12 +13,14 @@ public class EmergencyReportRequest {
         private String time;
         private double latitude;
         private double longitude;
+        private String contents;
 
         @Builder
-        public EmergencyReportCreateRequest(String time, double latitude, double longitude) {
+        public EmergencyReportCreateRequest(String time, double latitude, double longitude, String contents) {
             this.time = time;
             this.latitude = latitude;
             this.longitude = longitude;
+            this.contents = contents;
         }
     }
 }

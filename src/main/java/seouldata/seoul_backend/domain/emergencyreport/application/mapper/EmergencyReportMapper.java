@@ -15,6 +15,7 @@ public class EmergencyReportMapper {
                 .time(LocalDateTime.parse(emergencyReportCreateRequest.getTime(), formatter))
                 .latitude(emergencyReportCreateRequest.getLatitude())
                 .longitude(emergencyReportCreateRequest.getLongitude())
+                .contents(emergencyReportCreateRequest.getContents())
                 .build();
     }
     public static EmergencyReportResponse.EmergencyReportInHourResponse mapToEmergencyReportInHourResponse(EmergencyReport emergencyReport) {
@@ -23,6 +24,7 @@ public class EmergencyReportMapper {
                 .time(emergencyReport.getTime().format(formatter))
                 .latitude(emergencyReport.getLatitude())
                 .longitude(emergencyReport.getLongitude())
+                .contents(emergencyReport.getContents())
                 .build();
     }
 }
